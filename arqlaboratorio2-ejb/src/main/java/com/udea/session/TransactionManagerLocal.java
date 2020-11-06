@@ -16,5 +16,9 @@ import javax.ejb.Local;
 public interface TransactionManagerLocal {
 
     void insertTransaction(Transaccion transaccion);
+
+    void d(String s);
+
+   
     
 }

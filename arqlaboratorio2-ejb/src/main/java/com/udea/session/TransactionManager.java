@@ -34,4 +34,12 @@ public class TransactionManager implements TransactionManagerLocal {
         em.persist(transaccion);
     }
 
+    @Override
+    public void d(String s) {
+        System.out.println(s);
+        int i=0;
+    }
+    
+  
+
 }

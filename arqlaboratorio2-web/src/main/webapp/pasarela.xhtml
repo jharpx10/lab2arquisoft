@@ -6,7 +6,7 @@
       xmlns:p="http://primefaces.org/ui" contentType="text/html">
     <h:head>
         <title>Facelet Title</title>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     </h:head>
     <h:body>
@@ -20,60 +20,58 @@
                     <p:outputLabel value="Nombre:" for="nombre" />
                     <p:inputText id="nombre" value="#{transactionManagedBean.transaccion.nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
                     <p:outputLabel value="Cedula:" for="cedula" />
-                    <p:inputText id="cedula" value="#{transactionManagedBean.transaccion.cedula}" title="Cedula" />
+                    <p:inputText id="cedula" value="#{transactionManagedBean.transaccion.cedula}" title="Cedula" required="true" requiredMessage="The Nombre field is required." >
+                        <f:validateLength minimum = "10" maximum = "10" />
+                    </p:inputText>
                     <p:outputLabel value="Correo:" for="correo" />
                     <p:inputText id="correo" value="#{transactionManagedBean.transaccion.correo}" title="Correo" required="true" requiredMessage="The Correo field is required."/>
                     <p:outputLabel value="Numerotarjeta:" for="numerotarjeta" />
-                    <p:inputText type="number" id="numerotarjeta" value="#{transactionManagedBean.transaccion.numerotarjeta}"  title="Numerotarjeta" required="true" requiredMessage="The Numerotarjeta field is required."/>
+                    <p:inputText type="number" id="numerotarjeta" value="#{transactionManagedBean.transaccion.numerotarjeta}"  title="Numerotarjeta" required="true" requiredMessage="The Numerotarjeta field is required.">
+                        <f:validateLength minimum = "16" maximum = "16" />
+                    </p:inputText>
+                    <p:outputLabel value="Tipo de tarjeta" for="cardtype" />
+                    <p:inputText type="cardtype" id="cardtype" value="#{transactionManagedBean.cardtype}"  title="Tipo de tarjeta" disabled="true"/>
                     <p:outputLabel value="Cvv:" for="cvv" />
-                    <p:inputText id="cvv" value="#{transactionManagedBean.transaccion.cvv}" title="Cvv" required="true" requiredMessage="The Cvv field is required."/>
+                    <p:inputText id="cvv" value="#{transactionManagedBean.transaccion.cvv}" title="Cvv" required="true" requiredMessage="The Cvv field is required.">
+                        <f:validateLength minimum = "3" maximum = "3" />
+                    </p:inputText>
                     <p:outputLabel value="Mesvencimiento:" for="mesvencimiento" />
-                    <p:inputText id="mesvencimiento" value="#{transactionManagedBean.transaccion.mesvencimiento}" title="Mesvencimiento" required="true" requiredMessage="The Mesvencimiento field is required."/>
+                    <p:inputText id="mesvencimiento" value="#{transactionManagedBean.transaccion.mesvencimiento}" title="Mesvencimiento" required="true" requiredMessage="The Mesvencimiento field is required.">
+                        <f:validateLength minimum = "2" maximum = "2" />
+                        <f:validateLongRange minimum="1" maximum="12" />
+                    </p:inputText>
                     <p:outputLabel value="Añovencimiento:" for="anovencimiento" />
-                    <p:inputText id="anovencimiento" value="#{transactionManagedBean.transaccion.añovencimiento}" title="Añovencimiento" required="true" requiredMessage="The Añovencimiento field is required."/>
+                    <p:inputText id="anovencimiento" value="#{transactionManagedBean.transaccion.añovencimiento}" title="Añovencimiento" required="true" requiredMessage="The Añovencimiento field is required.">
+                        <f:validateLength minimum = "4" maximum = "4" />
+                        <f:validateLongRange minimum="2020" />
+                    </p:inputText>
                     <p:outputLabel value="Valortransaccion:" for="valortransaccion" />
-                    <p:inputText id="valortransaccion" value="#{transactionManagedBean.transaccion.valortransaccion}" title="Valortransaccion" />
+                    <p:inputText id="valortransaccion" value="#{transactionManagedBean.transaccion.valortransaccion}" title="Valortransaccion" required="true" requiredMessage="The Añovencimiento field is required.">
+
+                        <f:validateLongRange minimum="500" maximum="10000" />
+                    </p:inputText>
                 </p:panelGrid>
-               
-                
-      <h:commandButton id="insert" value="insert" action="#{transactionManagedBean.insert()}"/>
+                <h2>Captcha</h2>
+                <p:messages id="msg"/>
+                <p:captcha id="captcha"></p:captcha>
+                <br/>
+
+                <h:commandButton id="insert" value="insert" action="#{transactionManagedBean.insert()}"/>
+                <h:commandButton id="valide" value="validar" action="#{transactionManagedBean.validar()}"/>
             </h:form>
-     <h:commandButton id="valide" value="validar" onclick="validar()"/>
-            <p:outputLabel id="type" value="ffdjkdf"/>
- 
+
+
+
 
 
         </f:view>
 
-       
-        
-    </h:body>
-    
-    
-    <script>
 
-    function validar() {
-        
-      const tarjeta=jQuery('#numerotarjeta').val();
-    switch (tarjeta) {
-  case tarjeta>=11111:
-    document.getElementById("type").innerHTML = "American Express";
-    [break;]
-  case valor2:
-    //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
-    [break;]
-  
-  case valorN:
-    //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
-    [break;]
-  default:
-    //Declaraciones ejecutadas cuando ninguno de los valores coincide con el valor de la expresión
-    [break;]
-}
-    
-      
-    }
-</script>
-    
-    
+
+    </h:body>
+
+
+
+
+
 </html>
