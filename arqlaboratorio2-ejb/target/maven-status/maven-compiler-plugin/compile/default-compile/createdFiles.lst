@@ -1,0 +1,5 @@
+com\udea\entity\Transaccion.class
+com\udea\session\TransactionManagerLocal.class
+com\udea\arqlab\NewSessionBean.class
+com\udea\entity\Transaccion_.class
+com\udea\session\TransactionManager.class

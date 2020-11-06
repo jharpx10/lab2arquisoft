@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui" contentType="text/html">
+    <h:head>
+        <title>Facelet Title</title>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    </h:head>
+    <h:body>
+        <f:view contentType="text/html">
+
+
+
+            <h:form prependId="false">
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="Nombre:" for="nombre" />
+                    <p:inputText id="nombre" value="#{transactionManagedBean.transaccion.nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
+                    <p:outputLabel value="Cedula:" for="cedula" />
+                    <p:inputText id="cedula" value="#{transactionManagedBean.transaccion.cedula}" title="Cedula" />
+                    <p:outputLabel value="Correo:" for="correo" />
+                    <p:inputText id="correo" value="#{transactionManagedBean.transaccion.correo}" title="Correo" required="true" requiredMessage="The Correo field is required."/>
+                    <p:outputLabel value="Numerotarjeta:" for="numerotarjeta" />
+                    <p:inputText type="number" id="numerotarjeta" value="#{transactionManagedBean.transaccion.numerotarjeta}"  title="Numerotarjeta" required="true" requiredMessage="The Numerotarjeta field is required."/>
+                    <p:outputLabel value="Cvv:" for="cvv" />
+                    <p:inputText id="cvv" value="#{transactionManagedBean.transaccion.cvv}" title="Cvv" required="true" requiredMessage="The Cvv field is required."/>
+                    <p:outputLabel value="Mesvencimiento:" for="mesvencimiento" />
+                    <p:inputText id="mesvencimiento" value="#{transactionManagedBean.transaccion.mesvencimiento}" title="Mesvencimiento" required="true" requiredMessage="The Mesvencimiento field is required."/>
+                    <p:outputLabel value="Añovencimiento:" for="anovencimiento" />
+                    <p:inputText id="anovencimiento" value="#{transactionManagedBean.transaccion.añovencimiento}" title="Añovencimiento" required="true" requiredMessage="The Añovencimiento field is required."/>
+                    <p:outputLabel value="Valortransaccion:" for="valortransaccion" />
+                    <p:inputText id="valortransaccion" value="#{transactionManagedBean.transaccion.valortransaccion}" title="Valortransaccion" />
+                </p:panelGrid>
+               
+                
+      <h:commandButton id="insert" value="insert" action="#{transactionManagedBean.insert()}"/>
+            </h:form>
+     <h:commandButton id="valide" value="validar" onclick="validar()"/>
+            <p:outputLabel id="type" value="ffdjkdf"/>
+ 
+
+
+        </f:view>
+
+       
+        
+    </h:body>
+    
+    
+    <script>
+
+    function validar() {
+        
+      const tarjeta=jQuery('#numerotarjeta').val();
+    switch (tarjeta) {
+  case tarjeta>=11111:
+    document.getElementById("type").innerHTML = "American Express";
+    [break;]
+  case valor2:
+    //Declaraciones ejecutadas cuando el resultado de expresión coincide con el valor2
+    [break;]
+  
+  case valorN:
+    //Declaraciones ejecutadas cuando el resultado de expresión coincide con valorN
+    [break;]
+  default:
+    //Declaraciones ejecutadas cuando ninguno de los valores coincide con el valor de la expresión
+    [break;]
+}
+    
+      
+    }
+</script>
+    
+    
+</html>
