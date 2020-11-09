@@ -6,13 +6,8 @@
 package com.udea.controller;
 
 import com.udea.entity.Transaccion;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
+
 
 /**
  *
@@ -77,7 +72,9 @@ public class TransactionManagedBean {
      * @return
      */
     public String insert() {
+        
         transactionManager.insertTransaction(transaccion);
+        
         return "INSERTED";
     }
 /**
@@ -86,7 +83,6 @@ public class TransactionManagedBean {
      * @return
      */
     public String validar() {
-      
         String sCadena, sSubCadena;
         sCadena = String.valueOf(transaccion.getNumerotarjeta());
         sSubCadena = sCadena.substring(0, 5);

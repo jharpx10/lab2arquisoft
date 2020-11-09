@@ -17,7 +17,6 @@ public interface TransactionManagerLocal {
 
     void insertTransaction(Transaccion transaccion);
 
-    void d(String s);
 
    
     

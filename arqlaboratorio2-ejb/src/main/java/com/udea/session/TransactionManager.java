@@ -7,9 +7,6 @@ package com.udea.session;
 
 import com.udea.entity.Transaccion;
 import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.annotation.Resource;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -21,10 +18,12 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class TransactionManager implements TransactionManagerLocal {
 
-   @PersistenceContext(name= "com.udea.arqlab_arqlaboratorio2-ejb_ejb_1.0-SNAPSHOTPU")
+   
+    @PersistenceContext(name= "com.udea.arqlab_arqlaboratorio2-ejb_ejb_1.0-SNAPSHOTPU")
     private EntityManager em;
    
 
+ 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
     @Override
@@ -34,11 +33,9 @@ public class TransactionManager implements TransactionManagerLocal {
         em.persist(transaccion);
     }
 
-    @Override
-    public void d(String s) {
-        System.out.println(s);
-        int i=0;
-    }
+   
+
+   
     
   
 

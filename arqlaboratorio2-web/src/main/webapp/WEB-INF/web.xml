@@ -22,13 +22,14 @@
         <welcome-file>faces/pasarela.xhtml</welcome-file>
     </welcome-file-list>
     <context-param>
-<param-name>primefaces.PUBLIC_CAPTCHA_KEY</param-name>
-<param-value>6LcsgdQZAAAAAJ4miwh8cveLZ3cOIe_AfvBr3eJo</param-value>
+    <param-name>primefaces.PRIVATE_CAPTCHA_KEY</param-name>
+    <param-value>6LdmtuAZAAAAANR_sWuvmEII_uHnxDEKCOxXdxQ8</param-value>
 </context-param>
 <context-param>
-<param-name>primefaces.PRIVATE_CAPTCHA_KEY</param-name>
-<param-value>6LcsgdQZAAAAAHN1FI1hcuUBk6qY2kJdeUH4Xu4X</param-value>
+    <param-name>primefaces.PUBLIC_CAPTCHA_KEY</param-name>
+    <param-value>6LdmtuAZAAAAAAEUaoBOufV5Bjrebxr-SqMrnE2h</param-value>
 </context-param>
+   
     
     
 </web-app>
